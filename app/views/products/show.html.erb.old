@@ -1,0 +1,11 @@
+<div class="articlemenu"></div>
+<div class = "picimage">
+	<%= image_tag  @product.avatar_url, :width => 200 %>
+</div>
+	<h2><%= @product.name %> </h2>
+		<p><%=raw @product.description.gsub("\n","<br />") %></p>
+		<p>Cena:<%= @product.price %></p>
+		<p><%= link_to 'Kup', {:action => :new, :controller => :orders, :product_id => @product.id} %></p>
+		<p><%= link_to "cofnij", :back%>
+<div class="articlemenu"></div>
+

@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Agma-shop 
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #header
+      = link_to "Agma-shop.pl", root_path
+    #container
+     
+      #left
+        = link_to "Suplement Diety", '/suplementy_diety'
+        = link_to "Kolagen Naturalny",'/kolagen_naturalny' 
+        = link_to "Linia Kosmetyczna", '/linia_kosmetyczna'
+
+      #content
+        = yield
+
+      #footer

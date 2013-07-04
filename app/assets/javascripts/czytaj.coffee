@@ -1,0 +1,3 @@
+$	->	
+	$('#guzik').click -> 
+		$('.schowaj').slideToggle()

@@ -1,0 +1,31 @@
+<div id=shadow-left>
+<h1 id="notice"><%= notice %> </h1>
+
+	<h1><%- @order.products.each do |produkcik| %>
+  	  <%= produkcik.name %>
+ 	 <%- end %></h1>
+
+	<h2><%= @order.name %> <%= @order.surname %></h2> 
+
+	<h2><%= @order.adress %></h2>
+
+	<h2><%= @order.phone1 %></h2>
+
+	<h2><%= @order.email %></h2>
+
+	<h2><%= @order.post %></h2> 
+
+	<h2><%= @order.information %></h2> 
+	
+	<h2><% if  @order.pysio1  %>
+		<%=  "Przesylka listowa" %>
+			<% end %>
+		<% if  @order.pysio2  %>
+		<%=  "Paczka pocztowa" %>
+			<% end %>
+		<% if  @order.pysio3  %>
+  	<%=  "Paczka pocztowa z deklarowana wartoscia" %>
+  		<% end %></h2>
+
+</div>
+

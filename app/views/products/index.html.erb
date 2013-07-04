@@ -1,0 +1,24 @@
+<div id=shadow>
+<h1>Lista produktów</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Cena</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |f| %>
+  <tr>
+    <td><%= f.name %></td>
+    <td><%= f.price %></td>
+    <td><%= link_to 'pokaz', f %></td>
+    <td><%= link_to 'zmien', edit_product_path(f) %></td>
+    <td><%= link_to 'usun', f, confirm: 'Jestes pewien?', method: :delete %><br /> </td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'nowy produkt', new_product_path %>
+<%= link_to 'wroc', :back %>
+</div>

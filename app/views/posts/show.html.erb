@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<h2>Rodzaj przesyłki</h2>
+<p>
+  <% if  @post.name  %>
+  <%=  "Przesyłka A" %>
+  <% end %>
+</p>
+
+  <p>
+    <% if @post.tipe %>
+      <%= "Przesyłka B" %>
+    <% end %>
+  </p>
+
+  <p>
+    <% if @post.tipe2 %>
+      <%= "Przesyłka C" %>
+    <% end %>
+  </p>
+
+  <p>
+    <% if @post.tipe3 %>
+      <%= "Przesyłka D" %>
+    <% end %>
+  </p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

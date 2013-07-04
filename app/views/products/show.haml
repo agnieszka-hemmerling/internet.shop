@@ -1,0 +1,13 @@
+#shadow-left  
+  = image_tag @product.avatar_url, width: 200
+  %h1
+    =@product.name
+  %p
+    =raw @product.description.gsub("\n", "<br />")
+  %p
+    Cena
+    = @product.price
+  %p 
+    = link_to 'Kup', {:action => :new, :controller => :orders, :product_id => @product.id} 
+  %p
+    =link_to "cofnij", :back

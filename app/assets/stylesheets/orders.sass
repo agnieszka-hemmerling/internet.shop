@@ -1,0 +1,30 @@
+@import 'blueprint/liquid'
+
+#container
+  width: 100%
+#left
+  display: none
+
+#content, #shadow
+  +column(24)
+  font-family: Georgia, serif
+  font-size: 14px
+  width: 97%
+  margin-left: 10px
+  overflow-x: scroll
+
+#content
+  th
+    font-weight: bold
+    text-transform: uppercase
+    color: white
+  table, td, th
+    width: 70%
+    margin-left: 10px
+    padding-left: 3px
+    padding-right: 3px
+    border: 1px black solid
+    a
+      padding: 10px
+  
+

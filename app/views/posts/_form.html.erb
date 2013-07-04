@@ -1,0 +1,18 @@
+<%= form_for(:post, :url => {:action => 'create'}) do |f|%>
+
+
+
+  <div >
+    <%= f.label :name %><br />
+    <%= f.check_box :name %>
+  </div>
+  <div >
+    <%= f.label :tipe %><br />
+    <%= f.check_box :tipe %>
+  </div>
+  <div >
+    <%= f.label :tipe2 %><br />
+    <%= f.check_box :tipe2 %>
+  </div>
+<%= submit_tag ("Create Post") %>
+<% end %>

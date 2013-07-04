@@ -1,0 +1,29 @@
+<%= form_for   @posts    do |f|%>
+
+  
+
+  <div >
+    <%= f.check_box (:name)  %>
+    <%= f.label ("Przesyłka A")%><br />
+
+
+  </div>
+  <div >
+    <%= f.check_box (:tipe) %>
+		 <%= f.label ("Przesyłka B") %><br />
+
+
+  </div>
+  <div >
+    <%= f.check_box (:tipe2) %>
+		<%= f.label ("Przesyłka C") %><br />
+  </div>
+ 
+ <div >
+    <%= f.check_box (:tipe3) %>
+    <%= f.label ("Przesyłka D") %><br />
+  </div>
+
+<%= submit_tag ("Create Post") %>
+<% end %>
+                                                   

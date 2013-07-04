@@ -1,0 +1,21 @@
+<div id=shadow-left>
+  <h1>
+  <%= @category.name %></h1>
+
+<h2>Produkty:</h2>
+
+
+<table>
+  <tr>
+			<%- @category.products.each do |produkcik| %>
+		<th><%= image_tag  produkcik.avatar_url, :width => 200, :heigth => 300 %></th>
+	</tr>
+	<tr>
+		<td> <%= link_to produkcik.name , produkcik %></td>
+	</tr>
+	 <%- end %>
+</table>
+
+
+<%= link_to "cofnij" , root_path %>
+</div>

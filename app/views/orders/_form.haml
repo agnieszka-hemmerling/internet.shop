@@ -1,0 +1,40 @@
+= form_for(@order, :url => {:action => 'create'} ) do |f| 
+  - if @order.errors.any? 
+    #error_explanation
+      %h2= "#{pluralize(@order.errors.count, "error")}prohibited this order from being saved:"
+      %ul
+        - @order.errors.full_messages.each do |msg| 
+          %li= msg 
+
+  
+  - if @order.new_record? 
+    =hidden_field_tag :product_id, @zamawiany_produkt.id 
+
+  %h3= f.label "Imie:*" 
+  %h3= f.text_field :name ,:value =>"wymagane",:size =>25
+
+  %h3= f.label "Nazwisko:*" 
+  %h3= f.text_field:surname,:value =>"wymagane",:size =>25
+
+  %h3= f.label "Adres:*" 
+  %h3= f.text_area(:adress,:cols =>23, :rows =>3,:value =>"wymagane") 
+  %h3= f.label "Telefon:" 
+  %h3= f.text_field :phone1,:size =>25
+
+  %h3= f.label "e-mail*" 
+  %h3= f.text_field :email,:value =>"wymagane",:size =>25
+  %h3= f.label "Kod pocztowy*" 
+  %h3= f.text_field :post ,:value =>"wymagane",:size =>8 
+  %h3= f.label "Dodatkowe informacje:"
+  %h3= f.text_area(:information,:cols => 23,:rows => 3)
+  %h3
+    =f.check_box :pysio1 
+    =f.label "Przesylka listowa" 
+  %h3
+    =f.check_box :pysio2 
+    =f.label "Paczka pocztowa"  
+  %h3
+    =f.check_box :pysio3 
+    =f.label "Paczka pocztowa z deklarowana wartoscia" 
+  %h3 Wszystkie przesylki sa wysylane droga ekonomiczna, jesli chcesz wysylke piorytetowa napisz to w polu dodatkowe informacje
+  %h3= submit_tag "Zamów" 

@@ -1,0 +1,16 @@
+<script>
+function powieksz() {
+	$('*').animate({'font-size':400}, 4000,null, 'pomniejsz()')
+}
+function pomniejsz() {
+	$('*').animate({'font-size':20}, 4000,null, 'powieksz()')
+}
+$(function() {
+
+				$('h1').click(function() {
+					powieksz()
+				})
+})
+</script>
+
+<h1>Clicknij mnie (;</h1>

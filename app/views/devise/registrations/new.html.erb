@@ -1,0 +1,18 @@
+<h2>Nie masz konta, zaloguj się tutaj</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password, "Hasło" %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation, "Potwierdz hasło" %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Zaloguj się" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

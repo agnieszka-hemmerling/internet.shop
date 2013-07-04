@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InternetShop</title>
+	  <%= stylesheet_link_tag("application") %>
+	  <%= javascript_include_tag("application") %>
+	  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="header">
+	<div id="header-container">
+		<p>Skontaktuj się ze mną<br /><br />ulan2005@wp.pl	
+		</p>
+      <h1>agma Sklep</h1>
+		<ul>
+			<li><%= link_to "Home", root_path %></li>
+		</ul>			
+		<br class="clear">
+	</div>
+</div>
+<div id="description">
+<!--	
+	<input type='button' id='powieksz'value="powieksz"/>
+	<input type='button'id= "pomniejsz" value="pomniejsz"/> 
+-->
+		<p> Kolagen Naturalny - unikalna formuła Q 5-26 to żywe, biologicznie aktywne białko. To szansa na spełnienie się jednego z najstarszych marzeń ludzkości - zatrzymania młodości.<br />
+		</p>
+</div>
+<div id=container>
+	<div id="sidebar">
+		<h1>Kosmetyki
+		</h1>
+			<p>Kosmetyki są pogrupowane w kategorie, aby łatwiej można bylo znaleść swój ulubiony produkt.
+			</p>
+  <div data-pjax-container>
+		<ul>	
+			<li><%= link_to "Suplement Diety", category_path(6) %></li>
+			<li><%= link_to "Kolagen Naturalny", category_path(8) %></li>	
+			<li><%= link_to "Linia Kosmetyczna", category_path(9) %></li>
+    </ul>
+  </div>
+		<p>Strona jest w trakcie budowy ;)  </p>
+		<h1>Regulamin Wysylki</h1>
+		<p>Wyslki ..... </p>
+	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
+</div>
+<div id="footer">
+	<div id="footercontent">
+	</div>
+</div>
+</body>
+</html>

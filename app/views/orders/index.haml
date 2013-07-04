@@ -1,0 +1,44 @@
+#shadow
+  = link_to "wyloguj sie", destroy_user_session_path  
+  %h1 Lista zamowien
+
+  %table
+    %tr
+      %th Imię
+      %th Nazwisko
+      %th Adres
+      %th Telefon
+      %th Email
+      %th Kod pocztowy
+      %th Informacje
+      %th Rodzaj wysyłki
+      %th Produkt zamówiony
+      %th
+      %th
+      %th
+    - @orders.each do |order| 
+      %tr
+        %td= order.name
+        %td= order.surname
+        %td= order.adress
+        %td= order.phone1
+        %td= order.email 
+        %td= order.post 
+        %td= order.information 
+        %td
+          - if order.pysio1 
+            = "Przysylka listowa"
+          - if  order.pysio2 
+            = "Paczka pocztowa"
+          - if  order.pysio3
+            = "Paczka pocztowa z deklarowana wartoscia" 
+        %td
+          - order.products.each do |produkcik|
+            = produkcik.name 
+        %td= link_to 'Pokaż', order 
+        %td= link_to 'Zmien', edit_order_path(order)
+        %td= link_to 'Usuń', order, :confirm => 'Czy na pewno chcesz usunąć?', :method => :delete
+
+  %br 
+
+  = link_to "produkty", products_path

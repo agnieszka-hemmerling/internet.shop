@@ -1,0 +1,65 @@
+<%= form_for(@order, :url => {:action => 'create'} ) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <%- if @order.new_record? %>
+      <%= hidden_field_tag :product_id, @zamawiany_produkt.id %>
+  <%- end %>
+
+   <h3> <%= f.label "Imię:*" %></h3> 
+	 <h3> <%= f.text_field :name %></h3>
+				<br />
+    
+	<h3><%= f.label "Nazwisko:*" %></h3>
+	<h3>		 <%= f.text_field :surname %></h3>
+				<br />
+    
+	<h3><%= f.label "Adres:*" %></h3>
+  <h3> 	<%= f.text_area( :adress, :rows =>2, :cols =>60  ) %></h3>
+				<br />
+    
+	<h3><%= f.label "Telefon:" %></h3>
+	<h3>    <%= f.number_field :phone %></h3>
+				<br />
+    
+	<h3><%= f.label "e-mail*" %></h3>
+  <h3>  <%= f.text_field :email %></h3>
+				<br />
+    
+	<h3><%= f.label "Kod pocztowy*" %></h3>
+  <h3>   <%= f.number_field :post_code %></h3>
+				<br />
+    
+	<h3><%= f.label "Dodatkowe informacje:" %></h3>
+  <h3><%= f.text_area(:information,  :rows => 2,  :cols => 60 )  %></h3>
+				<br />
+  
+	<h3><%=f.label "Przesylka listowa" %></h3>
+	<h3><%=f.check_box :pysio1 %></h3>
+				<br />  
+
+	<h3><%=f.label "Paczka pocztowa" %></h3> 
+  <h3><%=f.check_box :pysio2 %></h3>
+        <br />
+
+	<h3><%=f.label "Paczka pocztowa z deklarowana wartoscia" %></h3> 
+  <h3><%=f.check_box :pysio3 %></h3>
+        <br />
+	<h3>Wszystkie przesylki za wysylane droga ekonomiczna, jesli chcesz przesylke piorytetowa napisz to w polu informacje</h3>
+				<br />
+	<h3>Pola oznaczone symbolem gwiazdka* muszą być wypełnione</h3>  
+	<h3><%= submit_tag "Zamów" %></h3>
+  
+
+<% end %>
+

@@ -1,0 +1,46 @@
+<%= link_to "wyloguj sie", destroy_user_session_path  %>
+<h1>Lista zamowien</h1>
+
+<table>
+  <tr>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+    <th>Adres</th>
+    <th>Telefon</th>
+    <th>Email</th>
+    <th>Kod pocztowy</th>
+    <th>Informacje</th>
+    <th>Rodzaj wysyłki</th>
+    <th>Produkt zamówiony</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.surname %></td>
+    <td><%= order.adress %></td>
+    <td><%= order.phone1 %></td>
+    <td><%= order.email %></td>
+    <td><%= order.post %></td>
+    <td><%= order.information %></td>
+		<td><% if  order.pysio1  %>
+    <%=  "Przysylka listowa" %>
+      <% end %>
+    <% if  order.pysio2  %>
+    <%=  "Paczka pocztowa" %>
+      <% end %>
+    <% if  order.pysio3  %>
+    <%=  "Paczka pocztowa z deklarowana wartoscia" %>
+      <% end %></td>
+
+		<td> <% order.products.each do |produkcik| %>
+				<%= produkcik.name %>
+				<% end %>
+	</td>
+    <td><%= link_to 'Pokaż', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Usuń', order, confirm: 'Czy na pewno chcesz usunąć?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "produky", products_path %>
